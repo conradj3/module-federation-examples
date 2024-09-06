@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  build-local:
+    desc: "Build the application"
+    cmds:
+    - docker build -t dynamic-remotes:latest .
+  run-local:
+    desc: "Run the application locally"
+    cmds:
+    - docker run -d --name dynamic-remotes -p 3001:3001 -p 3002:3002 -p 3003:3003 dynamic-remotes:latest
